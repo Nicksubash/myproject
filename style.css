@@ -1,0 +1,154 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    position: relative;
+    height: 100vh;
+   width: 100vw;
+ background:linear-gradient(rgb(197, 90, 90),blue);
+justify-content: center;
+align-items: center;
+display: flex;
+overflow: hidden;
+
+}
+.bg-circle{
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    background: linear-gradient(30deg, rgb(90, 90, 170) 20%, rgb(255, 101, 101));
+position:absolute;
+left: 50%;
+transform: translate(-50%,-75%);
+}
+.circle2{
+    height: 40rem;
+    width: 40rem;
+    background: linear-gradient(60deg, rgb(90, 90, 170) 50%, rgb(255, 101, 101));
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(0%,22%);
+    z-index: 1;
+
+
+}
+ .phone{
+    height: 30rem;
+    width: 15rem;
+    position: inherit;
+    z-index: 3;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(254, 253, 253);
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        width: 60%;
+      }
+      .circle{
+        position:relative;
+        height:8rem;
+        width: 8rem;
+        border-radius: 100%;
+        background: linear-gradient(50deg, rgb(90, 90, 170) 20%, rgb(255, 101, 101));
+        margin: auto;
+      }
+    .mini-circle{
+        margin: auto;
+        position:absolute;
+        border-radius: 100%;
+        height:6rem;
+        width: 6rem;
+        background: linear-gradient(60deg, rgb(90, 90, 170) 20%, rgb(255, 101, 101));
+       right: 0px;
+       transform: scale(0);
+       transform: translate(0.6sec);
+       transform-origin: center;
+ }
+ p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100%;
+    font-weight: 1000;
+  }
+   p.light{
+    position:absolute;
+    left: 130px;
+    bottom:-4px;
+    text-align: center;
+ }
+ p.dark{
+   position: relative;
+   bottom: 45px;
+   left:25px;
+   opacity: 0.5;
+}
+ .heading{
+    position:absolute;
+    bottom: 110px;
+    left: 10px;
+    font-size: 25px;
+    font-weight:600;
+ }
+ label{
+    height: 2.5rem;
+    width: 90%;
+    border-radius: 100px;
+    background-color: rgb(94, 173, 241);
+    cursor: pointer;
+    position:absolute;
+    bottom:85px;
+    left: 6px;
+    border: 3px solid black;
+}
+ .toggle{
+    height: 2.5rem;
+    width: 50%;
+    background-color: rgb(155, 255, 222);
+    position:center;
+    border-radius: 100px;
+    box-shadow: 0 1px 5px 2px black;
+    }
+ .circle:hover .mini-circle{
+    transform: scale(1);
+ }
+ .mode{
+   user-select: none;
+   display: flex;
+   flex-direction: column;
+ }
+ /*light to dark*/
+ input{
+   display: none;
+ }
+ input:checked + .container{
+   background: linear-gradient(25deg,rgb(100, 79, 79) 20%,rgb(72, 76, 104));
+   background-color: rgb(38, 38, 46);
+   color: aliceblue;
+ }
+ input:checked + .container .toggle{
+   background-color: rgb(99, 99, 99);
+   transform: translatex(100%);
+ }
+
+ input:checked + .container .dark{
+   opacity: 1;
+ }
+
+ input:checked + .container .circle2{
+   background: linear-gradient(60deg,black,rgb(95, 102, 102));
+   background-color: rgb(240, 0, 0);
+ }
+ input:checked + .container .bg-circle{
+   background: linear-gradient(30deg,rgb(62, 73, 64), black);
+
+ }
+ input:checked + .container .circle{
+   background: linear-gradient(50deg,rgb(62, 73, 64), black);
+}
